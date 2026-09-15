@@ -1,0 +1,254 @@
+:root {
+  --bg: #0c0c0d;
+  --surface: #161618;
+  --surface-raised: #1f1f22;
+  --border: #2a2a2e;
+  --text: #f4f4f2;
+  --text-secondary: #a3a3a8;
+  --text-tertiary: #88888e;
+  --accent: #f5b841;
+  --on-accent: #0c0c0d;
+  --danger: #f26d6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+header.marca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 32px;
+  flex-wrap: wrap;
+}
+
+header.marca a.nombre {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+nav.paginas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav.paginas a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav.paginas a:hover,
+nav.paginas a[aria-current="page"] {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 40px 0 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+h1 + .meta {
+  margin-bottom: 24px;
+}
+
+.meta {
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+.aviso {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 20px 0 32px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.aviso strong {
+  color: var(--text);
+}
+
+p {
+  color: var(--text-secondary);
+  margin: 12px 0;
+}
+
+ul, ol {
+  color: var(--text-secondary);
+  padding-left: 22px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+strong {
+  color: var(--text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+th {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 1px solid var(--accent);
+}
+
+a {
+  color: var(--accent);
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+.tarjeta .titulo {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.tarjeta .desc {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.pasos {
+  counter-reset: paso;
+  list-style: none;
+  padding-left: 0;
+}
+
+.pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding-left: 40px;
+  margin: 16px 0;
+}
+
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.historial {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.historial h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.historial ul {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+footer.pie {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+footer.pie a {
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+}
